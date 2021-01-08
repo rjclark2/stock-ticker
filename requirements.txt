@@ -1,2 +1,5 @@
 gunicorn==19.9.0
 requests==2.20.0
+Flask==0.10.1
+Flask-SQLAlchemy==1.0
+Flask-WTF==0.9.3
