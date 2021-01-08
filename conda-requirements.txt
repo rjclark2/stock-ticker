@@ -2,7 +2,6 @@ pandas
 bokeh
 dill
 flask
-Flask
 Flas-WTF
 jinja2
 pip
