@@ -10,5 +10,9 @@ def home():
 def about():
   return render_template('about.html')
 
+@app.route('/graph')
+def graph():
+    print('hello world')
+
 if __name__ == '__main__':
   app.run(port=33507)
