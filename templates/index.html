@@ -1,21 +1,9 @@
-<!DOCTYPE htmls>
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Stock Market Graphs</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  </head>
-  <body>
-    <h1>Ticker Lookup App</h1>
-    <div class="container">
-      <h2>Entery Query Information</h2>
-    </div>
-    <form action="" method="post" name="stock_data">
-      <div class="field">
-	<label for="ticker" class="label">Ticker Symbol:</label> 
-	<div class="control">
-          <input type="text" name = "ticker" class="input" required="required"/>
-	</div>
-       </div>
-  </body>
-</html>
+{% extends "layout.html" }
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>Enter Query Information</h1>
+
+    <ul>
+      <li><a href="{{ url_for('graph') }}">Graph</a></li>
+    </ul>
+{% endblock %}
