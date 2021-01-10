@@ -6,8 +6,5 @@ Flask-WTF==0.9.3
 pandas
 bokeh
 dill
-flask
-Flas-WTF
 jinja2
-pip
 simplejson
