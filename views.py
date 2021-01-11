@@ -19,8 +19,16 @@ def gen_graph():
         adjclosep = request.form.getlist('adj_closing')
         openp = request.form.getlist('opening')
         adjopenp = request.form.getlist('volume')
-        syear = pd.to_datetime(form_syear)
-        eyear = pd.to_datetime(form_eyear)
+        try:
+            syear = pd.to_datetime(form_syear)
+        except:
+            return render_template('invalid.html')
+        try:
+            eyear = pd.to_datetime(form_eyear)
+        except:
+            return render_template('invalid.html')
+        if syear < pd.to_datetime('02-01-2019') or eyear > pd.to_datetime('01-08-2021'):
+            return render_template('invalid.html')
         r = requests.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=%s&outputsize=full&apikey=%s&datatype=csv' % (symbol,api_key)).content
         df=pd.read_csv(io.StringIO(r.decode('utf-8')))
         df.timestamp = pd.to_datetime(df.timestamp)
